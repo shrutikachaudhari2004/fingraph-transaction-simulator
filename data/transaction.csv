@@ -1,1 +1,7 @@
 
+{
+  "transaction_id": "TXN001",
+  "from_account": "ACC101",
+  "to_account": "ACC205",
+  "amount": 5000
+}
