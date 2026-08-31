@@ -32,3 +32,5 @@ with open("data/transactions.csv") as file:
 producer.flush()
 
 print("All transactions sent!")
+
+
