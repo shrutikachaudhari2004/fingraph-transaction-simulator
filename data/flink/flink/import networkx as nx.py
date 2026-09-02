@@ -1,14 +1,12 @@
-[11:51 pm, 02/09/2026] Shrutika Chaudhari:     )
-[11:54 pm, 02/09/2026] Shrutika Chaudhari: import networkx as nx
+import networkx as nx
 
-# Create directed graph
+# Create graph
 G = nx.DiGraph()
 
 # Sample transaction relationships
 G.add_edge("ACC001", "ACC002")
 G.add_edge("ACC002", "ACC003")
 G.add_edge("ACC003", "ACC001")
-
 G.add_edge("ACC001", "ACC004")
 G.add_edge("ACC004", "ACC005")
 
@@ -18,7 +16,7 @@ G.add_edge("ACC004", "ACC005")
 
 pagerank = nx.pagerank(G)
 
-print("\n===== PageRank =====")
+print("=== PageRank ===")
 
 for account, score in sorted(
     pagerank.items(),
@@ -29,14 +27,16 @@ for account, score in sorted(
 
 
 # -------------------------
-# Louvain Community Detection
+# Community Detection
 # -------------------------
 
-print("\n===== Louvain Communities =====")
+print("\n=== Community Detection ===")
+
+undirected_graph = G.to_undirected()
 
 communities = nx.community.louvain_communities(
-    G.to_undirected()
+    undirected_graph,
+    seed=42
 )
 
 for community_id, community in enumerate(communities):
-    print("Community", community_id, ":", list(community))
