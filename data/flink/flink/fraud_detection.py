@@ -1,5 +1,4 @@
-[11:51 pm, 02/09/2026] Shrutika Chaudhari:     )
-[11:54 pm, 02/09/2026] Shrutika Chaudhari: import networkx as nx
+import networkx as nx
 
 # Create directed graph
 G = nx.DiGraph()
@@ -39,4 +38,9 @@ communities = nx.community.louvain_communities(
 )
 
 for community_id, community in enumerate(communities):
-    print("Community", community_id, ":", list(community))
+    print(
+        "Community",
+        community_id,
+        ":",
+        list(community)
+    )
