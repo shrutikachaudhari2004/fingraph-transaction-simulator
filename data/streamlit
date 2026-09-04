@@ -1,0 +1,10 @@
+import pandas as pd
+
+risk_data = pd.DataFrame({
+    "Risk": ["LOW", "MEDIUM", "HIGH"],
+    "Count": [500, 350, 150]
+})
+
+st.bar_chart(
+    risk_data.set_index("Risk")
+)
