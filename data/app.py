@@ -5,15 +5,6 @@ import os
 
 
 
-BASE_DIR = Path(__file__).resolve().parent
-CSV_FILE = BASE_DIR / "transaction.csv"
-
-if not CSV_FILE.exists():
-    st.error(f"❌ transaction.csv not found: {CSV_FILE}")
-    st.stop()
-
-df = pd.read_csv(CSV_FILE)
-
 # -----------------------------
 # Page Configuration
 # -----------------------------
